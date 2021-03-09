@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import AvatarImage from '../Assets/UserImage.svg';
+// import AvatarImage from '../Assets/UserImage.svg';
 
-function Header() {
+function Header({ user, signOut }) {
     return (
         <Container>
             <Main>
@@ -19,10 +19,10 @@ function Header() {
             </Main>
             <UserContainer>
                 <Name>
-                    Chris
+                    {user.name}
                 </Name>
-                <UserImage>
-                    <img className="avatar-image" src={AvatarImage} alt="User Profile" />
+                <UserImage onClick={signOut}>
+                    <img src={user.photo ? user.photo : "https://i.imgur.com/6VBx3io.png"} alt="User"/>
                 </UserImage>
             </UserContainer>
         </Container>
@@ -32,12 +32,15 @@ function Header() {
 export default Header
 
 const Container = styled.div`
-    background: #5e2231;
+    height: 41px;
+    background: #6b2738;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 10;
+    box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
 `
 const Main = styled.div`
     display: flex;
@@ -82,16 +85,14 @@ const Name = styled.div`
     padding: 0 16px 0 0;
 `
 const UserImage = styled.div`
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
     border: 2px solid white;
     border-radius: 4px;
-    padding: 2.5px;
+    cursor: pointer;
     
-
-    .avatar-image {
+    img {
         width: 100%;
-        
     }
 
 `
