@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import db from '../firebase';
+import { useParams } from 'react-router-dom';
 
 function ChatMessage({ text, name, image, timestamp}) {
+
+    // let channelId = useParams();
+    // const [input, setInput] = useState()
+
+    // const deleteMessage = (e) => {
+    //     e.preventDefault();
+
+
+    //     console.log(e)
+
+    //     if(channelId)
+    //     db.collection("rooms").doc(channelId).collection('messages').delete()
+
+    //     setInput("")
+    // }
+
+
+
     return (
         <Container>
             <UserAvatar>
@@ -15,6 +35,11 @@ function ChatMessage({ text, name, image, timestamp}) {
                 <Text>
                     {text}
                 </Text>  
+                <DeletButton
+                    // onClick={deleteMessage}
+                >
+                    Delete
+                </DeletButton>
             </MessageContent>
         </Container>
     )
@@ -40,6 +65,8 @@ const UserAvatar = styled.div`
     }
 `
 const MessageContent = styled.div`
+
+font-family: 'PT Sans', sans-serif;
     
 `
 const Name = styled.div`
@@ -58,4 +85,13 @@ const Name = styled.div`
 `
 const Text = styled.div`
 
+`
+const DeletButton = styled.button`
+    font-size: .6rem;
+    color: #f8f8f8;
+    background: #d92146;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.19);
 `

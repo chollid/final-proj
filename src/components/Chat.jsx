@@ -5,9 +5,9 @@ import ChatInput from './ChatInput';
 import ChatMessage from './ChatMessage';
 import InfoIcon from '@material-ui/icons/Info';
 import db from '../firebase';
-import {fromMillis} from '../firebase';
 import { useParams } from 'react-router-dom';
 import firebase from 'firebase';
+import '../Assets/fonts.css';
 
 
 function Chat({ user }) {
@@ -23,7 +23,7 @@ function Chat({ user }) {
         .orderBy('timestamp', 'asc')
         .onSnapshot((snapshot) => {
             let messages = snapshot.docs.map((doc) => doc.data());
-            console.log(messages)
+            // console.log(messages)
             setMessages(messages);
         })
     }
@@ -38,7 +38,7 @@ function Chat({ user }) {
             }
             db.collection("rooms").doc(channelId).collection('messages').add(payload);
 
-            console.log(payload)
+            // console.log(payload)
         }
     }
 
@@ -128,6 +128,10 @@ const ChannelDetails = styled.div`
     display: flex;
     align-items: center;
     color: #616060;
+
+    div {
+        font-family: 'PT Sans', sans-serif;
+    }
 `
 const Info = styled(InfoIcon)`
     margin: 0 0 0 10px;

@@ -91,8 +91,8 @@ const Name = styled.div`
 `
 
 const NewMessage = styled.div`
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
     background: white;
     color: #6b2738;
     fill: #6b2738;
@@ -111,7 +111,7 @@ const MainChannelItems = styled.div`
     color: rgb(188,171,188);
     display: grid;
     grid-template-columns: 15% auto;
-    height: 28px;
+    height: 29px;
     align-items: center;
     padding: 0 0 0 19px;
     cursor: pointer;
@@ -140,6 +140,14 @@ const NewChannelContainer = styled.div`
    align-items: center;
    height: 28px;
    padding: 0 12px 0 19px;
+
+   div {
+       cursor: pointer;
+   }
+
+   .MuiSvgIcon-root {
+       cursor: pointer;
+   }
 `
 
 const ChannelsList = styled.div`
