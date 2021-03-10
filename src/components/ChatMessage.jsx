@@ -5,6 +5,12 @@ import { useParams } from 'react-router-dom';
 
 function ChatMessage({ text, name, image, timestamp}) {
 
+    const [messageToDelete, setMessageToDelete] = useState() //should be current message
+
+
+    const deleteMessage = (e) => {
+        setMessageToDelete() // Maybe useEffect call to delete on Firestore?
+    }
     // let channelId = useParams();
     // const [input, setInput] = useState()
 
