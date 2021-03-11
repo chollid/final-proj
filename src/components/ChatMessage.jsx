@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import db from '../firebase';
 import { useParams } from 'react-router-dom';
 
-function ChatMessage({ text, name, image, timestamp}) {
-
-    const [messageToDelete, setMessageToDelete] = useState() //should be current message
 
 
-    const deleteMessage = (e) => {
-        setMessageToDelete() // Maybe useEffect call to delete on Firestore?
-    }
+    // const deleteMessage = (e) => {
+    //     setMessageToDelete(prevMessage => {
+    //         return {...prevState, //function}
+
+    //     })  Maybe useEffect call to delete on Firestore?
+    // }
+
+    // OR
+
     // let channelId = useParams();
     // const [input, setInput] = useState()
 
@@ -26,7 +29,35 @@ function ChatMessage({ text, name, image, timestamp}) {
     //     setInput("")
     // }
 
+function ChatMessage({ text, name, image, timestamp}) {
 
+    let { channelId } = useParams();
+
+    // const deleteMessage = (e) => {
+        // const messageDelete = e.target.value
+        // const messageDelete = () => {
+        //     _collectionReference.snapshots().forEach((element) {
+        //         for (QueryDocumentSnapshot snapshot in element.docs) {
+        //           snapshot.reference.delete();
+        //         }
+        //       });
+            // db.collection('rooms')
+            // .doc(channelId)
+            // .collection('messages').delete();
+            // *******
+            // firestore.collection('messages').getDocuments().then((snapshot) {
+            //     for (DocumentSnapshot doc in snapshot.documents){
+            //       doc.reference.delete();
+            //     });
+            //   });
+        
+        // console.log('YOOOOOOO >>>>>', messageDelete);
+
+        // setMessageToDelete(messageDelete) //**Set state to empty message
+    
+
+    const [messageToDelete, setMessageToDelete] = useState("") //should be current message. Function use makes sure it runs once inside useState
+    
 
     return (
         <Container>
@@ -42,15 +73,16 @@ function ChatMessage({ text, name, image, timestamp}) {
                     {text}
                 </Text>  
                 <DeletButton
-                    // onClick={deleteMessage}
+                    // onClick={deleteMessage} ** OR** onClick={setDeleteMessage( #code to delete from firestore#)}
+                    // onClick={messageDelete}
                 >
                     Delete
                 </DeletButton>
             </MessageContent>
         </Container>
     )
-}
 
+    }
 export default ChatMessage
 
 
