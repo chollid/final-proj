@@ -5,34 +5,15 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import GroupIcon from '@material-ui/icons/Group';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import BlurLinearIcon from '@material-ui/icons/BlurLinear';
 
 export const sidebarItems = [
     {
-        icon: <FitnessCenterIcon />,
-        text: "Exercises"
+        icon: <BlurLinearIcon />,
+        text: "Resource Center"
     },
-    {
-        icon: <MessageIcon />,
-        text: "Thread"
-    },
-    {
-        icon: <InboxIcon />,
-        text: "All DMs"
-    },
-    {
-        icon: <DraftsIcon />,
-        text: "Mentions & Reactions"
-    },
-    {
-        icon: <SaveAltIcon />,
-        text: "Save Items"
-    },
-    {
-        icon: <GroupIcon />,
-        text: "People & Groups"
-    },
-    {
-        icon: <MoreHorizIcon />,
-        text: "More"
-    }
+    // {
+    //     icon: <MoreHorizIcon />,
+    //     text: "More"
+    // }
 ]

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import Logo from '../Assets/FitTrackrLogo.png';
+import Logo from '../Assets/CovidLogo.png';
+import Background from '../Assets/covidbackground.jpg';
 import { auth, provider } from '../firebase';
 
 function Login(props) {
@@ -45,7 +46,11 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background: #148E9D;
+    background: -webkit-radial-gradient(center, #148E9D, #7F6980);
+    background: -moz-radial-gradient(center, #148E9D, #7F6980);
+    background: radial-gradient(ellipse at center, #148E9D, #7F6980);
+
 `
 const Content = styled.div` 
     background: white;
@@ -62,10 +67,12 @@ const Content = styled.div`
 `
 const FitTrackrImage = styled.img`
     height: 100px;
+    margin: 0 0 1.5rem 0;
+    border-radius: 12px;
 `
 const SignInButton = styled.button`
     margin: 45px 0 0 0;
-    background: #fc234f;
+    background: #5C62AC;
     color: white;
     border: none;
     border-radius: 4px;

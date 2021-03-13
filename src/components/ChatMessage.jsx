@@ -31,8 +31,8 @@ import { useParams } from 'react-router-dom';
 
 function ChatMessage({ text, name, image, timestamp}) {
 
-    let { channelId } = useParams();
-    const [messageToDelete, setMessageToDelete] = useState("") //should be current message. Function use makes sure it runs once inside useState
+    // let { channelId } = useParams();
+    // const [messageToDelete, setMessageToDelete] = useState("") //should be current message. Function use makes sure it runs once inside useState
 
     // const deleteMessage = (e) => {
         // const messageDelete = e.target.value
@@ -46,22 +46,22 @@ function ChatMessage({ text, name, image, timestamp}) {
             // .doc(channelId)
             // .collection('messages').delete();
             // *******
-           let messageDelete = () => { 
-            db.collection('rooms')
-            .doc(channelId)
-            .collection('messages')
-            .getDocuments()
-            .then((snapshot) {
-                for (DocumentSnapshot doc in snapshot.documents){
-                    doc.reference.delete();
-                }
-            })
-            .onSnapshot((snapshot) => {
-                let messages = snapshot.docs.map((doc) => doc.data());
-                // console.log(messages)
-                setMessages(messages);
-            })
-        }
+        //    let messageDelete = () => { 
+        //     db.collection('rooms')
+        //     .doc(channelId)
+        //     .collection('messages')
+        //     .getDocuments()
+        //     .then((snapshot) {
+        //         for (DocumentSnapshot doc in snapshot.documents){
+        //             doc.reference.delete();
+        //         }
+        //     })
+        //     .onSnapshot((snapshot) => {
+        //         let messages = snapshot.docs.map((doc) => doc.data());
+        //         // console.log(messages)
+        //         setMessages(messages);
+        //     })
+        // }
             
             
             
@@ -77,7 +77,7 @@ function ChatMessage({ text, name, image, timestamp}) {
         //     }
         // console.log('YOOOOOOO >>>>>', messageDelete);
 
-         setMessageToDelete(messageDelete) //**Set state to empty message
+        //  setMessageToDelete(messageDelete) //**Set state to empty message
     
 
    

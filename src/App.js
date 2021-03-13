@@ -1,15 +1,18 @@
 
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useState, useEffect } from 'react'
 
 import Login from './components/Login';
 import Chat from './components/Chat';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import CovidDatacenter from './CovidDatacenter/CovidDatacenter';
 import db from './firebase';
 import { auth, provider } from './firebase';
+
+import Arrow from './Assets/long-arrow-left.png';
 
 function App() {
 
@@ -52,8 +55,14 @@ useEffect(() => {
                   <Route path="/room/:channelId">
                     <Chat user={user} />
                   </Route>
-                  <Route path="/">
-                    Select or Create a Channel
+                  <Route path="/covid-datacenter">
+                    <CovidDatacenter />
+                  </Route>
+                  <Route exact path="/">
+                    <SelectChannel>
+                      <img src={Arrow} alt="arrow" />
+                      <h1>Try Selecting or Creating a Channel!</h1>
+                    </SelectChannel>
                   </Route>
                 </Switch>
             </Main>
@@ -76,4 +85,28 @@ const Main = styled.div`
   // background: blue;
   display: grid;
   grid-template-columns: 260px auto;
+  `
+
+const Bounce = keyframes`
+  0% {left: 0;}
+  50% {left: 100%;}
+  100% {left: 0;}
+`
+
+const SelectChannel = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+// max-width: 70%;
+animation: ${Bounce} 3s infinite;
+
+  h1 {
+    font-weight: 700;
+    margin-left: 17px;
+  }
+  img {
+    height: 70px;
+   
+  
+  }
 `

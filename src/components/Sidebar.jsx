@@ -4,8 +4,9 @@ import AddIcon from '@material-ui/icons/Add';
 import {sidebarItems} from '../data/SidebarData';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import db from '../firebase';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
+import BlurLinearIcon from '@material-ui/icons/BlurLinear';
 
 function Sidebar(props) {
 
@@ -31,23 +32,28 @@ function Sidebar(props) {
         <Container>
             <WorkspaceContainer>
                 <Name>
-                    FitTrackr
+                    Covid Resource Center
                 </Name>
                 <NewMessage>
                     <AddIcon />
                 </NewMessage>
             </WorkspaceContainer>
-            <MainChannels>
-                {
-                    sidebarItems.map(item => (
-                        <MainChannelItems>
-                            {item.icon}
-                            {item.text}
-                        </MainChannelItems>
-                    ))
-                }
-                
-            </MainChannels>
+            <Link to="/covid-datacenter">
+                <MainChannels>
+                    {
+                        sidebarItems.map(item => (
+                            <MainChannelItems>
+                                <BlurLinearIcon />
+                                <h3>Covid Data Center</h3>
+                                {/* {item.icon}
+                                {item.text} */}
+
+                            </MainChannelItems>
+                        ))
+                    }
+                    
+                </MainChannels>
+            </Link>
             <ChannelsContainer>
                 <NewChannelContainer>
                     <div>
@@ -105,26 +111,54 @@ const NewMessage = styled.div`
 `
 
 const MainChannels = styled.div`
-    padding: 20px 0 0 0;
+   
+    padding: 1.6rem 0 1.6rem 0;
+    // background: #7a3646;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 90%;
+    margin: 3rem auto;
+
+    &:hover {
+        background: #39404d;
+    
+    }
+   
 `
 const MainChannelItems = styled.div`
-    color: rgb(188,171,188);
+    // color: rgb(188,171,188);
+    color: #2b2d33;
     display: grid;
     grid-template-columns: 15% auto;
-    height: 29px;
+    height: 3rem;
     align-items: center;
-    padding: 0 0 0 19px;
+    padding: 1rem 0 1rem 19px;
     cursor: pointer;
-    :hover {
-        background: #612332;
-        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.32);
-    }
+    text-decoration: none;
+
     .MuiSvgIcon-root {
         // box-shadow: -2px 2px 4px 0px rgba(0,0,0,0.19)
         // box-shadow: -2px 2px 4px 0px rgba(58,58,58,0.19)
         // filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+        margin-left: -6px;
         filter: drop-shadow(-2px 6px 4px #000000);
+        font-size: 2.5rem;
+        color: #edf0fa;
     }
+    h3 {
+        margin-left: .5rem;
+        filter: drop-shadow(-2px 1px 2px #e1e1e3);
+
+        &:hover {
+            color: #edf0fa;
+            filter: drop-shadow(-2px 1px 2px #00000);
+        }
+    }
+
 `
 
 const ChannelsContainer = styled.div`
@@ -140,6 +174,7 @@ const NewChannelContainer = styled.div`
    align-items: center;
    height: 28px;
    padding: 0 12px 0 19px;
+   margin: 4rem 0 0 0;
 
    div {
        cursor: pointer;

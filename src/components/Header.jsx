@@ -9,13 +9,13 @@ function Header({ user, signOut }) {
     return (
         <Container>
             <Main>
-                <AccessTimeIcon />
+                {/* <AccessTimeIcon /> */}
                 <SearchContainer>
-                    <Search>
+                    {/* <Search>
                         <input type="text" placeholder="Search..." />
-                    </Search>
+                    </Search> */}
                 </SearchContainer>
-                <HelpOutlineIcon />
+                {/* <HelpOutlineIcon /> */}
             </Main>
             <UserContainer>
                 <Name>
@@ -34,6 +34,8 @@ export default Header
 const Container = styled.div`
     height: 41px;
     background: #6b2738;
+
+
     color: #fff;
     display: flex;
     align-items: center;
