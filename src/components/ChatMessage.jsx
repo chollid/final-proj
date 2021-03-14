@@ -96,12 +96,12 @@ function ChatMessage({ text, name, image, timestamp}) {
                 <Text>
                     {text}
                 </Text>  
-                <DeletButton
+                {/* <DeletButton
                     // onClick={deleteMessage} ** OR** onClick={setDeleteMessage( #code to delete from firestore#)}
                     // onClick={messageDelete}
                 >
                     Delete
-                </DeletButton>
+                </DeletButton> */}
             </MessageContent>
         </Container>
     )

@@ -1,5 +1,3 @@
-
-  
 import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import "../css/InfoBox.css";
@@ -14,7 +12,7 @@ function InfoBox({ title, cases, total, active, isRed, ...props }) {
       }`}
     >
       <CardContent>
-        <Typography color="textSecondary" gutterBottom>
+        <Typography variant="h5" color="textSecondary" gutterBottom>
           {title}
         </Typography>
         <h2 className={`infoBox__cases ${!isRed && "infoBox__cases--green"}`}>

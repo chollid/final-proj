@@ -76,7 +76,9 @@ const CovidDatacenter = () => {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1>COVID-19 Tracker</h1>
+          <div>
+          <h1>COVID Data Center</h1>
+          </div>
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"
@@ -123,14 +125,14 @@ const CovidDatacenter = () => {
         />
       </div>
       <Card className="app__right">
-        <CardContent>
-          <div className="app__information">
-            <h3>Live Cases by Country</h3>
-            <Table countries={tableData} />
-            <h3>Worldwide new {casesType}</h3>
-            <LineGraph casesType={casesType} />
-          </div>
-        </CardContent>
+          <CardContent>
+            <div className="app__information">
+              <h3>Live Cases by Country</h3>
+              <Table countries={tableData} />
+              <h3>Worldwide new {casesType}</h3>
+              <LineGraph casesType={casesType} />
+            </div>
+          </CardContent>
       </Card>
     </div>
   );

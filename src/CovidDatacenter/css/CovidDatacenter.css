@@ -11,13 +11,18 @@
   .app {
     display: flex;
     justify-content: space-evenly;
-    background-color: #f5f6fa;
-    /* background-color: #293974; */
+    /* background-color: #f5f6fa; */
+    background-image: url('../../Assets/CovidMainBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 20px;
   }
   
   .app__dropdown {
     background-color: white;
+  border-radius: 10px;
+  /* width: 8rem; */
+
   }
   
   .app__header {
@@ -25,11 +30,16 @@
     align-items: center;
     margin-bottom: 20px;
     justify-content: space-between;
+
   }
-  
+
+  .app__header > div {
+    filter: drop-shadow(-2px 6px 4px #7a7979);
+  }
+
   .app__header > h1 {
-    color: #fc3c3c;
-    font-size: 2rem;
+    color: #16161d;
+    font-size: 2.2rem;
   }
   
   .app__stats {
@@ -43,13 +53,15 @@
 
   .app__right {
     max-height: 90%;
+    
   }
-  
+
   .app__information > h3 {
     color: #6a5d5d;
     font-weight: 400;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    
   }
   
   .app__information > h3 {

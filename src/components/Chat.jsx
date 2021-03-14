@@ -75,7 +75,7 @@ function Chat({ user }) {
                 <ChannelDetails>
 
                     <div>
-                        Details
+                        Share with our Community
                     </div>
                     <ChatBubbleOutlineIcon />
 
@@ -114,17 +114,13 @@ const Header = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(83, 39, 83, .13)
-    
-    background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 `
 
 const Channel = styled.div`
-
+ 
 `
 const ChannelName = styled.div`
     font-weight: 700;

@@ -125,8 +125,7 @@ const MainChannels = styled.div`
     margin: 3rem auto;
 
     &:hover {
-        background: #39404d;
-    
+        background: #f0f0f0;
     }
    
 `
