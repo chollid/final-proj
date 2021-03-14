@@ -40,6 +40,10 @@
   .app__left {
     flex: 0.9;
   }
+
+  .app__right {
+    max-height: 90%;
+  }
   
   .app__information > h3 {
     color: #6a5d5d;

@@ -7,6 +7,7 @@ import db from '../firebase';
 import { useHistory, Link } from 'react-router-dom';
 
 import BlurLinearIcon from '@material-ui/icons/BlurLinear';
+import DonutSmallIcon from '@material-ui/icons/DonutSmall';
 
 function Sidebar(props) {
 
@@ -35,7 +36,7 @@ function Sidebar(props) {
                     Covid Resource Center
                 </Name>
                 <NewMessage>
-                    <AddIcon />
+                    <DonutSmallIcon />
                 </NewMessage>
             </WorkspaceContainer>
             <Link to="/covid-datacenter">

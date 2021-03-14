@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ChatInput from './ChatInput';
 import ChatMessage from './ChatMessage';
 import InfoIcon from '@material-ui/icons/Info';
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import db from '../firebase';
 import { useParams } from 'react-router-dom';
 import firebase from 'firebase';
@@ -16,6 +17,9 @@ function Chat({ user }) {
     const [ channel, setChannel ] = useState();
     const [ messages, setMessages ] = useState([]);
 
+
+
+      
     const getMessages = () => {
         db.collection('rooms')
         .doc(channelId)
@@ -64,7 +68,7 @@ function Chat({ user }) {
                         # {channel && channel.name}
                     </ChannelName>
                     <ChannelInfo>
-                        Announcements
+                        Follow along with the Chat!
                     </ChannelInfo>
                 
                 </Channel>
@@ -73,7 +77,7 @@ function Chat({ user }) {
                     <div>
                         Details
                     </div>
-                    <Info />
+                    <ChatBubbleOutlineIcon />
 
                 </ChannelDetails>
             </Header>
@@ -110,6 +114,13 @@ const Header = styled.div`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(83, 39, 83, .13)
+    
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 `
 
 const Channel = styled.div`
@@ -131,6 +142,7 @@ const ChannelDetails = styled.div`
 
     div {
         font-family: 'PT Sans', sans-serif;
+        margin: 0 1rem 0 0;
     }
 `
 const Info = styled(InfoIcon)`
