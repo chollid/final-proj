@@ -61,7 +61,7 @@ useEffect(() => {
                   <Route exact path="/">
                     <SelectChannel>
                       <img src={Arrow} alt="arrow" />
-                      <h1>Try Selecting or Creating a Channel!</h1>
+                      <h1>Select/Create a Channel, or go to the DataCenter</h1>
                     </SelectChannel>
                   </Route>
                 </Switch>
